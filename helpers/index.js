@@ -1,11 +1,10 @@
 let fs = require('fs')
-let data = JSON.parse(fs.readFileSync('./source/finalData.json'))
+let data = JSON.parse(fs.readFileSync('../source/finalData2.json'))
 
 /* EMALGORITHM */
 var emalgorithm = emalgorithm || {}
 emalgorithm.users = {};
 emalgorithm.items = new Array();
-emalgorithm.
 emalgorithm.itemindecs = {};
 emalgorithm.PIcollection=new Array();
 emalgorithm.W=new Array();
@@ -151,11 +150,11 @@ var myloop = 0, showtab = 0
     function load() {
       
       myloop = 0; showtab = 0;
-      NUMCLASS = 100
+      NUMCLASS = 10
       emalgorithm.initNUMCLASS(NUMCLASS);
 
-      for (var i=0; i<data.length; i++) {
-        emalgorithm.add(data[i].productName, data[i].productShortName, 'o');
+      for (var key in data) {
+        emalgorithm.add(key, key, 'o');
       }
 
       emalgorithm.initPIcollection();
